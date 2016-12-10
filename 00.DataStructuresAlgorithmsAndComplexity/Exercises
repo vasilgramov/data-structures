@@ -13,4 +13,5 @@ isPrime(1000000) - hangs
 isFastPrime(1000) - 481375 nanoseconds
 isFastPrime(10000) - 4305731 nanoseconds
 isFastPrime(100000) - 42570603 nanoseconds
-isFastPrime(1000000) - 1094022537 nanoseconds 
+isFastPrime(1000000) - 1094022537 nanoseconds
+
