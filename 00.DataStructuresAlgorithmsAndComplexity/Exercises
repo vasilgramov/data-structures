@@ -1,0 +1,16 @@
+p01. O(n)
+p02. O(1)
+p03. O(math.sqrt(n))
+p04. O(n * math.sqrt(n))
+p05. O(n * (math.sqrt(n) / 2))
+p06. O((end - start) * math.sqrt(end-start))
+p07. 
+isPrime(1000) - 3773821 nanoseconds
+isPrime(10000) - 93714647 nanoseconds
+isPrime(100000) - 6183257314 nanoseconds
+isPrime(1000000) - hangs
+
+isFastPrime(1000) - 481375 nanoseconds
+isFastPrime(10000) - 4305731 nanoseconds
+isFastPrime(100000) - 42570603 nanoseconds
+isFastPrime(1000000) - 1094022537 nanoseconds 
