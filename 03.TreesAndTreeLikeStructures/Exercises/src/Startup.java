@@ -19,12 +19,19 @@ public class Startup {
 
         // 01001100 01001111 01010110 01000101 00100000 01010000 01010010 01001111 01000111 01010010 01000001 01001101 01001101 01001001 01001110 01000111 00001101 00001010
 
-        BinaryTree<Integer> binaryTree =
-                new BinaryTree<Integer>(1,
-                        new BinaryTree<Integer>(2, new BinaryTree<Integer>(4), new BinaryTree<Integer>(11)),
-                        new BinaryTree<Integer>(13));
+        BinaryTree<String> binaryTree =
+                new BinaryTree<String>("*",
+                        new BinaryTree<String>("+", new BinaryTree<String>("3"), new BinaryTree<String>("2")),
+                        new BinaryTree<String>("-", new BinaryTree<String>("9"), new BinaryTree<String>("6")));
 
-        binaryTree.print(0);
+        binaryTree.preOrderPrint(0);
 
+        System.out.println("-------------------");
+
+        binaryTree.inOrderPrint(0);
+
+        System.out.println("-------------------");
+
+        binaryTree.postOrderPrint(0);
     }
 }
