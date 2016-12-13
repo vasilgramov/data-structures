@@ -31,12 +31,12 @@ public class Tree<T> {
     }
     //-------------------------------------------------
 
-    public void print(int spacesCount) {
-        System.out.println(newString(" ", spacesCount) + this.getValue());
+    public void print(int indent) {
+        System.out.println(newString(" ", indent) + this.getValue());
 
         if (this.getChildren() != null) {
             for (Tree<T> child : this.getChildren()) {
-                child.print(spacesCount + 2);
+                child.print(indent + 2);
             }
         }
 
