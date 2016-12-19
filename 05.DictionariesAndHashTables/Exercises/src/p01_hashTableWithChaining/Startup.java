@@ -22,7 +22,7 @@ public class Startup {
 
 //        Collection<String> ad = noteByName.values();
 
-        HashTable<String, Integer> noteByName = new HashTable<>(1);
+        HashTable<String, Integer> noteByName = new HashTable<>(8);
 
         noteByName.put("Pesho", 2);
         noteByName.put("Gosho", 3);
@@ -31,17 +31,17 @@ public class Startup {
 
 //        int note = noteByName.get("Gosho");
 
-//        for (KeyValue<String, Integer> keyValue : noteByName) {
-//            System.out.println(keyValue.getKey() + " " + keyValue.getValue());
-//        }
+        for (KeyValue<String, Integer> keyValue : noteByName) {
+            System.out.println(keyValue.getKey() + " " + keyValue.getValue());
+        }
 
 //        noteByName.put("Gosho", note + 10);
 //        System.out.println(note);
 
-        Object[] allValues = noteByName.values(); // returns array of objects
-        for (Object value : allValues) {
-            System.out.println(value);
-        }
+//        Object[] allValues = noteByName.values(); // returns array of objects
+//        for (Object value : allValues) {
+//            System.out.println(value);
+//        }
 
         //System.out.println(noteByName.containsValue(2));
 
