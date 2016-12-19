@@ -77,20 +77,28 @@ public class OrderedTree<T extends Comparable<T>> implements Iterable<T>{
     }
 
     public boolean contains(T element) {
-        for (T currentElement : this.allElements) {
-            if (currentElement.equals(element)) {
-                return true;
-            }
-        }
-
-        return false;
+        return searchElementDFS(this.root, element);
     }
     
     public void remove(T element) {
-        if (this.contains(element)) {
-            seachElementDFS(this.root, element);
-
+        if (this.root.compareTo(element) == 0) {
+            this.allElements.remove(this.root.getValue());
             this.setCount(this.getCount() - 1);
+
+            if (this.root.getRightChild() == null) {
+                this.root = this.root.getLeftChild();
+            } else {
+                Node<T> leftChildOfTheRoot = this.root.getLeftChild();
+                this.root = this.root.getRightChild();
+                if (leftChildOfTheRoot != null) {
+                    setLeftChild(this.root, leftChildOfTheRoot);
+                }
+            }
+        } else if (contains(element)) {
+            this.setCount(this.getCount() - 1);
+            this.allElements.remove(this.root.getValue());
+
+            removeElement(this.root, element);
         }
     }
 
@@ -114,17 +122,45 @@ public class OrderedTree<T extends Comparable<T>> implements Iterable<T>{
         return false;
     }
 
-    private void seachElementDFS(Node<T> root, T value) {
-        // TODO: remove element...
+    private boolean searchElementDFS(Node<T> root, T value) {
+        if (root.compareTo(value) == 0) {
+            return true;
+        } else if (root.compareTo(value) > 0 && root.getLeftChild() != null) {
+            return searchElementDFS(root.getLeftChild(), value);
+        } else if (root.compareTo(value) < 0 && root.getRightChild() != null) {
+            return searchElementDFS(root.getRightChild(), value);
+        }
 
-        boolean isBigger = root.compareTo(value) < 0;
-        Node<T> leftChild = root.getLeftChild();
-        Node<T> rightChild = root.getRightChild();
+        return false;
+    }
 
-        if (!isBigger && leftChild.compareTo(value) < 0) {
-            seachElementDFS(leftChild, value);
-        } else if (!isBigger && leftChild.compareTo(value) == 0) {
+    private void removeElement(Node<T> currentNode, T value) {
+        if (currentNode.getLeftChild().compareTo(value) == 0) {
+            Node<T> leftNodeOfTheCurrent = currentNode.getLeftChild().getLeftChild();
 
+            currentNode.setLeftChild(currentNode.getLeftChild().getRightChild());
+            if (currentNode.getLeftChild() != null && leftNodeOfTheCurrent != null) {
+                setLeftChild(currentNode.getLeftChild(), leftNodeOfTheCurrent);
+            } else {
+                currentNode.setLeftChild(leftNodeOfTheCurrent);
+            }
+        } else if (currentNode.getRightChild().compareTo(value) == 0) {
+            Node<T> leftNodeOfTheCurrent = currentNode.getRightChild().getLeftChild();
+
+            currentNode.setRightChild(currentNode.getRightChild().getRightChild());
+            if (currentNode.getRightChild() != null && leftNodeOfTheCurrent != null) {
+                setLeftChild(currentNode.getRightChild(), leftNodeOfTheCurrent);
+            } else if (leftNodeOfTheCurrent != null){
+                currentNode.setRightChild(leftNodeOfTheCurrent);
+            }
+        }
+    }
+
+    private void setLeftChild(Node<T> root, Node<T> leftChild) {
+        if (root.getLeftChild() == null) {
+            root.setLeftChild(leftChild);
+        } else {
+            setLeftChild(root.getLeftChild(), leftChild);
         }
     }
 
