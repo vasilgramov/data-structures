@@ -96,7 +96,7 @@ public class OrderedTree<T extends Comparable<T>> implements Iterable<T>{
             }
         } else if (contains(element)) {
             this.setCount(this.getCount() - 1);
-            this.allElements.remove(this.root.getValue());
+            this.allElements.remove(element);
 
             removeElement(this.root, element);
         }
@@ -153,6 +153,10 @@ public class OrderedTree<T extends Comparable<T>> implements Iterable<T>{
             } else if (leftNodeOfTheCurrent != null){
                 currentNode.setRightChild(leftNodeOfTheCurrent);
             }
+        } else if (currentNode.compareTo(value) < 0) {
+            removeElement(currentNode.getLeftChild(), value);
+        } else if (currentNode.compareTo(value) > 0) {
+            removeElement(currentNode.getLeftChild(), value);
         }
     }
 

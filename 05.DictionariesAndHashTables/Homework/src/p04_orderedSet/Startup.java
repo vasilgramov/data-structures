@@ -28,10 +28,11 @@ public class Startup {
 //        System.out.println("contains----------------- 19 -> " + orderedTree.contains(19));
 //        System.out.println("contains----------------- 16 -> " + orderedTree.contains(16));
 
-        orderedTree.remove(9);
         orderedTree.remove(12);
-
         System.out.println("foreach-able------------------------");
+
+//        orderedTree.remove(12);
+
         for (Integer element : orderedTree) {
             System.out.println(element);
         }
