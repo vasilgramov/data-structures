@@ -1,6 +1,6 @@
 package p01_AVLTreeImplementation;
 
-public class Node<T> implements Comparable<T>{
+public class Node<T extends Comparable<T>> implements Comparable<T>{
     private T value;
     private Node<T> leftChild;
     private Node<T> rightChild;
@@ -62,7 +62,7 @@ public class Node<T> implements Comparable<T>{
         return parent;
     }
 
-    private void setParent(Node<T> parent) {
+    public void setParent(Node<T> parent) {
         this.parent = parent;
     }
 
@@ -107,6 +107,6 @@ public class Node<T> implements Comparable<T>{
 
     @Override
     public int compareTo(T o) {
-        return this.getValue().toString().compareTo(o.toString());
+        return this.getValue().compareTo(o);
     }
 }
