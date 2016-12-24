@@ -75,7 +75,16 @@ public class Startup {
         avlTree.add(41);
         avlTree.add(42);
         avlTree.add(44);
+
+
+// -----------------------------------------------------------
+
+//        avlTree.add(5);
+//        avlTree.add(10);
+//        avlTree.add(8);
         print(avlTree.getRoot(), 1);
+
+        System.out.println(avlTree.contains(55));
 
     }
 

@@ -223,6 +223,30 @@ public class AVLTree<T extends Comparable<T>>/* implements Iterable<T> */{
         parentOfTheNode.setBalanceFactor(0);
     }
 
+    public boolean contains(T element) {
+        if (this.root.getValue().compareTo(element) == 0) {
+            return true;
+        }
+
+        return searchForNodeWithValue(this.root, element);
+    }
+
+    private boolean searchForNodeWithValue(Node<T> node, T value) {
+        if (node == null) {
+            return false;
+        }
+
+        if (node.compareTo(value) == 0) {
+            return true;
+        } else if (node.compareTo(value) > 0) {
+            return searchForNodeWithValue(node.getLeftChild(), value);
+        } else if (node.compareTo(value) < 0) {
+            return searchForNodeWithValue(node.getRightChild(), value);
+        }
+
+        return false;
+    }
+
 //    private void setDeepLeftChid(Node<T> node, Node<T> toAdd) {
 //        if (node.getLeftChild() != null) {
 //            node.setLeftChild(toAdd);
