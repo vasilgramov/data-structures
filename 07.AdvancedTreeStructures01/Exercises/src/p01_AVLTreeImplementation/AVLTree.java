@@ -173,7 +173,23 @@ public class AVLTree<T extends Comparable<T>>/* implements Iterable<T> */{
     private void rightLeftRotation(Node<T> node) {
        System.out.println("right-left");
 
+        Node<T> leftChild = node.getLeftChild();
+        Node<T> rightChildOfTheNode = leftChild.getRightChild();
 
+        leftChild.setRightChild(null);
+
+        if (rightChildOfTheNode != null) {
+            rightChildOfTheNode.setParent(node);
+        }
+        node.setLeftChild(rightChildOfTheNode);
+
+        Node<T> parent = node.getParent();
+        node.setParent(leftChild);
+        leftChild.setRightChild(node);
+        leftChild.setParent(parent);
+        parent.setRightChild(leftChild);
+
+        rightRightRotation(leftChild);
     }
 
     private void rightRightRotation(Node<T> node) {
@@ -201,8 +217,10 @@ public class AVLTree<T extends Comparable<T>>/* implements Iterable<T> */{
             leftChildOfTheNode.setParent(parentOfTheNode);
         }
 
-
         node.setLeftChild(parentOfTheNode);
+
+        node.setBalanceFactor(0);
+        parentOfTheNode.setBalanceFactor(0);
     }
 
 //    private void setDeepLeftChid(Node<T> node, Node<T> toAdd) {

@@ -32,29 +32,49 @@ public class Startup {
 //        avlTree.add(5);
 //--------------------------------------
 
-        avlTree.add(20);
-        avlTree.add(10);
-        avlTree.add(25);
+//        avlTree.add(20);
+//        avlTree.add(10);
+//        avlTree.add(25);
+//
+//        avlTree.add(5);
+//        avlTree.add(22);
+//        avlTree.add(30);
+//
+//        avlTree.add(21);
+//        avlTree.add(24);
+//        avlTree.add(27);
+//        avlTree.add(33);
+//
+//        avlTree.add(28);
 
-        avlTree.add(5);
-        avlTree.add(22);
+//        avlTree.add(4);
+//        avlTree.add(3);
+//
+//        avlTree.add(28);
+//        avlTree.add(29);
+//
+//        avlTree.add(34);
+//        avlTree.add(35);
+
+        //-----------------------------------------------------------
+
         avlTree.add(30);
+        avlTree.add(20);
+        avlTree.add(50);
 
-        avlTree.add(21);
-        avlTree.add(24);
-        avlTree.add(27);
-        avlTree.add(33);
+        avlTree.add(10);
+        avlTree.add(40);
+        avlTree.add(55);
 
-        avlTree.add(4);
-        avlTree.add(3);
-
-        avlTree.add(28);
-        avlTree.add(29);
-
-        avlTree.add(34);
         avlTree.add(35);
+        avlTree.add(48);
+        avlTree.add(52);
+        avlTree.add(65);
 
-        
+        avlTree.add(49);
+        avlTree.add(41);
+        avlTree.add(42);
+        avlTree.add(44);
         print(avlTree.getRoot(), 1);
 
     }
