@@ -3,26 +3,26 @@ package p01_AVLTreeImplementation;
 public class Startup {
     public static void main(String[] args) {
         AVLTree<Integer> avlTree = new AVLTree<>();
-        avlTree.add(20);
-
-        avlTree.add(25);
-        avlTree.add(12);
-
-        avlTree.add(26);
-        avlTree.add(17);
-        avlTree.add(8);
-
-        avlTree.add(4);
-        avlTree.add(10);
-        avlTree.add(15);
-        avlTree.add(19);
-
-        avlTree.add(16);
-
-        avlTree.add(3);
-        avlTree.add(5);
-
-        avlTree.add(6);
+//        avlTree.add(20);
+//
+//        avlTree.add(25);
+//        avlTree.add(12);
+//
+//        avlTree.add(26);
+//        avlTree.add(17);
+//        avlTree.add(8);
+//
+//        avlTree.add(4);
+//        avlTree.add(10);
+//        avlTree.add(15);
+//        avlTree.add(19);
+//
+//        avlTree.add(16);
+//
+//        avlTree.add(3);
+//        avlTree.add(5);
+//
+//        avlTree.add(6);
 //-----------------------------------
 
 //        avlTree.add(20);
@@ -30,8 +30,31 @@ public class Startup {
 //        avlTree.add(15);
 //        avlTree.add(10);
 //        avlTree.add(5);
+//--------------------------------------
 
+        avlTree.add(20);
+        avlTree.add(10);
+        avlTree.add(25);
 
+        avlTree.add(5);
+        avlTree.add(22);
+        avlTree.add(30);
+
+        avlTree.add(21);
+        avlTree.add(24);
+        avlTree.add(27);
+        avlTree.add(33);
+
+        avlTree.add(4);
+        avlTree.add(3);
+
+        avlTree.add(28);
+        avlTree.add(29);
+
+        avlTree.add(34);
+        avlTree.add(35);
+
+        
         print(avlTree.getRoot(), 1);
 
     }

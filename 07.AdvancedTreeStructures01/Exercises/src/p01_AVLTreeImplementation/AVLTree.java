@@ -154,39 +154,64 @@ public class AVLTree<T extends Comparable<T>>/* implements Iterable<T> */{
             parent.getParent().setLeftChild(node);
         }
 
-        parent.setParent(node);
-
         if (this.root.getValue().compareTo(parent.getValue()) == 0) {
             node.setRightChild(parent);
 
             this.root = node;
             node.setParent(null);
         } else {
+            node.setParent(parent.getParent());
             node.setRightChild(parent);
         }
+
+        parent.setParent(node);
 
         node.setBalanceFactor(0);
         parent.setBalanceFactor(0);
     }
 
     private void rightLeftRotation(Node<T> node) {
-//        System.out.println("right-left");
+       System.out.println("right-left");
 
 
     }
 
     private void rightRightRotation(Node<T> node) {
-//        System.out.println("right-right");
+        System.out.println("right-right");
 
-    }
+        Node<T> leftChildOfTheNode = node.getLeftChild();
+        Node<T> parentOfTheNode = node.getParent();
 
-    private void setDeepLeftChid(Node<T> node, Node<T> toAdd) {
-        if (node.getLeftChild() != null) {
-            node.setLeftChild(toAdd);
-        } else {
-            setDeepLeftChid(node.getLeftChild(), toAdd);
+        if (parentOfTheNode.getValue().compareTo(this.root.getValue()) == 0) {
+            this.root = node;
         }
+
+        node.setParent(parentOfTheNode.getParent());
+
+        if (parentOfTheNode.getParent() != null) {
+            parentOfTheNode.getParent().setLeftChild(node);
+        }
+
+        if (parentOfTheNode != null) {
+            parentOfTheNode.setRightChild(leftChildOfTheNode);
+            parentOfTheNode.setParent(node);
+        }
+
+        if (leftChildOfTheNode != null) {
+            leftChildOfTheNode.setParent(parentOfTheNode);
+        }
+
+
+        node.setLeftChild(parentOfTheNode);
     }
+
+//    private void setDeepLeftChid(Node<T> node, Node<T> toAdd) {
+//        if (node.getLeftChild() != null) {
+//            node.setLeftChild(toAdd);
+//        } else {
+//            setDeepLeftChid(node.getLeftChild(), toAdd);
+//        }
+//    }
 
 //    @Override
 //    public Iterator<T> iterator() {
