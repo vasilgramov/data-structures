@@ -29,7 +29,7 @@ public class p01_rangeInTree {
     }
 
     private static void nodesInInterval(Node<Integer> node, int from, int to) {
-        if (node.getLeftChild() != null) {
+        if (node.getLeftChild() != null && node.compareTo(from) >= 0) {
             nodesInInterval(node.getLeftChild(), from, to);
         }
 
@@ -37,7 +37,7 @@ public class p01_rangeInTree {
             nodesInRange.add(node.getValue());
         }
 
-        if (node.getRightChild() != null) {
+        if (node.getRightChild() != null && node.compareTo(to) <= 0) {
             nodesInInterval(node.getRightChild(), from, to);
         }
     }
