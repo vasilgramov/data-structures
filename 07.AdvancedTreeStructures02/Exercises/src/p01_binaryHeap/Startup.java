@@ -5,8 +5,10 @@ public class Startup {
 
         Integer[] numbers = new Integer[] { 3, 7, 1, 5, 9, 8 };
 
-        BinaryHeap<Integer> binaryHeap = new BinaryHeap<Integer>(numbers);
+        BinaryHeap<Integer> binaryHeap = new BinaryHeap<Integer>();
+        binaryHeap.peek();
 
+        binaryHeap.add(111);
         System.out.println("");
     }
 }

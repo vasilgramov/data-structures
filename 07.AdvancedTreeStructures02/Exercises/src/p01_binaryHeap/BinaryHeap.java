@@ -17,6 +17,12 @@ public class BinaryHeap<T extends Comparable<T>> {
         }
     }
 
+    public void add(T element) {
+        this.heap.add(element);
+
+        heapifyUp(this.heap.size() - 1);
+    }
+
     private void heapifyDown(int elementIndex) {
         int leftChildIndex = elementIndex * 2 + 1;
         int rightChildIndex = elementIndex * 2 + 2;
@@ -39,13 +45,15 @@ public class BinaryHeap<T extends Comparable<T>> {
         }
     }
 
-//    private void heapifyUp(int elementIndex) {
-//
-//    }
+    private void heapifyUp(int elementIndex) {
+        int parentIndex = (elementIndex - 1) / 2;
 
+        if (this.heap.get(parentIndex).compareTo(this.heap.get(elementIndex)) < 0) {
+            T old = this.heap.get(elementIndex);
+            this.heap.set(elementIndex, this.heap.get(parentIndex));
+            this.heap.set(parentIndex, old);
 
-
-//    public void add(T element) {
-//        this.heap
-//    }
+            heapifyUp(parentIndex);
+        }
+    }
 }
