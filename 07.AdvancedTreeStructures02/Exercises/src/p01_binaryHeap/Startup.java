@@ -8,7 +8,7 @@ public class Startup {
         BinaryHeap<Integer> binaryHeap = new BinaryHeap<Integer>(numbers);
         binaryHeap.add(123);
 
-        while (binaryHeap.count() > 0) {
+        while (binaryHeap.count() >= 0) {
             System.out.println(binaryHeap.peek());
             binaryHeap.extractMax();
         }

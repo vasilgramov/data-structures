@@ -46,7 +46,10 @@ public class BinaryHeap<T extends Comparable<T>> {
 
         this.heap.set(0, this.heap.get(this.heap.size() - 1));
         this.heap.remove(this.heap.size() - 1);
-        heapifyDown(0);
+
+        if (this.heap.size() > 0) {
+            heapifyDown(0);
+        }
 
         return toReturn;
     }
