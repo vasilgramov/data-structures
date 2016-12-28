@@ -32,6 +32,26 @@ public class QuadTree {
         return nodesInQuadrant;
     }
 
+    public void print(Node node, int indent) {
+        System.out.println(newString("-", indent) + node);
+
+        if (node.getChildren() != null) {
+            for (Node child : node.getChildren()) {
+                print(child, indent + 3);
+            }
+        }
+    }
+
+    private String newString(String delimener, int count) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < count; i++) {
+            builder.append(delimener);
+        }
+
+        return builder.toString();
+    }
+
     private void addNodesOfTheArea(Node node, ArrayList<Node> nodes, Rectangle currentArea) {
         if (currentArea.isInside(node.getBoundaries()) || node.getBoundaries().isInside(currentArea)) {
             addElementTo(nodes, node.getElements());

@@ -28,8 +28,10 @@ public class Startup {
         System.out.println("");
 
         ArrayList<Node> nodes = quadTree.getQuadrant(0, 0, 100, 100);
-        for (Node node : nodes) {
-            System.out.println(node);
-        }
+//        for (Node node : nodes) {
+//            System.out.println(node);
+//        }
+
+        quadTree.print(quadTree.getRoot(), 1);
     }
 }
