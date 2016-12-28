@@ -27,7 +27,7 @@ public class Startup {
 
         System.out.println("");
 
-        ArrayList<Node> nodes = quadTree.getQuadrant(0, 0, 200, 200);
+        ArrayList<Node> nodes = quadTree.getQuadrant(0, 0, 100, 100);
         for (Node node : nodes) {
             System.out.println(node);
         }
