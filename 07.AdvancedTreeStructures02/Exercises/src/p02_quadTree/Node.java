@@ -59,7 +59,6 @@ public class Node {
             root.getElements().add(element);
             if (shouldSplit(root)) {
                 split(root);
-                return true;
             }
         } else {
             if (root.getChildren() != null) {
@@ -163,7 +162,7 @@ public class Node {
     }
 
     private boolean shouldSplit(Node node) {
-        return node.getElements().size() > MAX_ELEMENTS && node.getDepth() <= DEFAULT_MAX_DEPTH && node.getChildren() == null;
+        return node.getElements().size() > MAX_ELEMENTS && node.getDepth() < DEFAULT_MAX_DEPTH && node.getChildren() == null;
     }
 
     @Override

@@ -67,9 +67,9 @@ public class Rectangle {
     }
 
     public boolean isInside(Rectangle other) {
-        return this.getX1() > other.getX1() &&
-                this.getY1() > other.getY1() &&
-                this.getX2() < other.getX2() &&
-                this.getY2() < other.getY2();
+        return this.getX1() >= other.getX1() &&
+                this.getY1() >= other.getY1() &&
+                this.getX2() <= other.getX2() &&
+                this.getY2() <= other.getY2();
     }
 }
