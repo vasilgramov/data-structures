@@ -53,8 +53,8 @@
       <file leaf-file-name="Startup.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/p02_quadTree/Startup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="50">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,15 +73,10 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p02_quadTree/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-840">
-              <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="24">
+              <caret line="137" column="69" lean-forward="false" selection-start-line="137" selection-start-column="69" selection-end-line="137" selection-end-column="69" />
               <folding>
                 <element signature="method#cloneAllElements#0;class#Node#0" expanded="false" />
-                <element signature="method#initializeChildren#0;class#Node#0" expanded="false" />
-                <element signature="method#thirdChild#0;class#Node#0" expanded="false" />
-                <element signature="method#secondChild#0;class#Node#0" expanded="false" />
-                <element signature="method#firstChild#0;class#Node#0" expanded="false" />
-                <element signature="method#zeroChild#0;class#Node#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -90,7 +85,7 @@
       <file leaf-file-name="QuadTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p02_quadTree/QuadTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="196">
               <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#543#544#0" expanded="true" />
@@ -661,12 +656,12 @@
       <workItem from="1482751244042" duration="11343000" />
       <workItem from="1482858757597" duration="11955000" />
       <workItem from="1482920453089" duration="7846000" />
-      <workItem from="1482932333734" duration="3609000" />
+      <workItem from="1482932333734" duration="6725000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34753000" />
+    <option name="totallyTimeSpent" value="37869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="26" width="1368" height="743" extended-state="7" />
@@ -694,7 +689,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5080386" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.74276525" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -727,12 +722,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/p02_quadTree/Startup.java</url>
-          <line>18</line>
+          <line>20</line>
           <properties />
-          <option name="timeStamp" value="72" />
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="102" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -785,11 +780,6 @@
           <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding>
             <element signature="method#cloneAllElements#0;class#Node#0" expanded="false" />
-            <element signature="method#initializeChildren#0;class#Node#0" expanded="false" />
-            <element signature="method#thirdChild#0;class#Node#0" expanded="false" />
-            <element signature="method#secondChild#0;class#Node#0" expanded="false" />
-            <element signature="method#firstChild#0;class#Node#0" expanded="false" />
-            <element signature="method#zeroChild#0;class#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -848,11 +838,6 @@
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="method#cloneAllElements#0;class#Node#0" expanded="false" />
-            <element signature="method#initializeChildren#0;class#Node#0" expanded="false" />
-            <element signature="method#thirdChild#0;class#Node#0" expanded="false" />
-            <element signature="method#secondChild#0;class#Node#0" expanded="false" />
-            <element signature="method#firstChild#0;class#Node#0" expanded="false" />
-            <element signature="method#zeroChild#0;class#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -936,11 +921,6 @@
           <caret line="10" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding>
             <element signature="method#cloneAllElements#0;class#Node#0" expanded="false" />
-            <element signature="method#initializeChildren#0;class#Node#0" expanded="false" />
-            <element signature="method#thirdChild#0;class#Node#0" expanded="false" />
-            <element signature="method#secondChild#0;class#Node#0" expanded="false" />
-            <element signature="method#firstChild#0;class#Node#0" expanded="false" />
-            <element signature="method#zeroChild#0;class#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -955,7 +935,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/p02_quadTree/QuadTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="196">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#543#544#0" expanded="true" />
@@ -965,23 +945,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/p02_quadTree/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="24">
+          <caret line="137" column="69" lean-forward="false" selection-start-line="137" selection-start-column="69" selection-end-line="137" selection-end-column="69" />
           <folding>
             <element signature="method#cloneAllElements#0;class#Node#0" expanded="false" />
-            <element signature="method#initializeChildren#0;class#Node#0" expanded="false" />
-            <element signature="method#thirdChild#0;class#Node#0" expanded="false" />
-            <element signature="method#secondChild#0;class#Node#0" expanded="false" />
-            <element signature="method#firstChild#0;class#Node#0" expanded="false" />
-            <element signature="method#zeroChild#0;class#Node#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/p02_quadTree/Startup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="50">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

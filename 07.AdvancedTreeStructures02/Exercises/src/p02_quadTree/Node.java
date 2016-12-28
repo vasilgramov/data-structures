@@ -55,15 +55,16 @@ public class Node {
             return false;
         }
 
-        root.getElements().add(element);
-        if (shouldSplit(root)) {
-            split(root);
-            return true;
-        }
-
-        if (root.getChildren() != null) {
-            root.elements.remove(element);
-            distributeElements(root, element);
+        if (root.getChildren() == null) {
+            root.getElements().add(element);
+            if (shouldSplit(root)) {
+                split(root);
+                return true;
+            }
+        } else {
+            if (root.getChildren() != null) {
+                distributeElements(root, element);
+            }
         }
 
         return true;
@@ -134,31 +135,31 @@ public class Node {
     }
 
     private void thirdChild(Node node, Rectangle currentBoundaries) {
-        node.getChildren()[3] = new Node(currentBoundaries.getX2() / 2,
-                currentBoundaries.getY2() / 2,
+        node.getChildren()[3] = new Node(currentBoundaries.getX1() + (currentBoundaries.getX2() - currentBoundaries.getX1()) / 2,
+                currentBoundaries.getY1() + (currentBoundaries.getY2() - currentBoundaries.getY1()) / 2,
                 currentBoundaries.getX2(),
                 currentBoundaries.getY2());
     }
 
     private void secondChild(Node node, Rectangle currentBoundaries) {
         node.getChildren()[2] = new Node(currentBoundaries.getX1(),
-                currentBoundaries.getY2() / 2,
-                currentBoundaries.getX2() / 2,
+                currentBoundaries.getY1() + (currentBoundaries.getY2() - currentBoundaries.getY1()) / 2,
+                currentBoundaries.getX1() + (currentBoundaries.getX2() - currentBoundaries.getX1()) / 2,
                 currentBoundaries.getY2());
     }
 
     private void firstChild(Node node, Rectangle currentBoundaries) {
         node.getChildren()[1] = new Node(currentBoundaries.getX1(),
                 currentBoundaries.getY1(),
-                currentBoundaries.getX2() / 2,
-                currentBoundaries.getY2() / 2);
+                currentBoundaries.getX1() + (currentBoundaries.getX2() - currentBoundaries.getX1()) / 2,
+                currentBoundaries.getY1() + (currentBoundaries.getY2() - currentBoundaries.getY1()) / 2);
     }
 
     private void zeroChild(Node node, Rectangle currentBoundaries) {
-        node.getChildren()[0] = new Node(currentBoundaries.getX2() / 2,
+        node.getChildren()[0] = new Node(currentBoundaries.getX1() + (currentBoundaries.getX2() - currentBoundaries.getX1()) / 2,
                 currentBoundaries.getY1(),
                 currentBoundaries.getX2(),
-                currentBoundaries.getY2() / 2);
+                currentBoundaries.getY1() + (currentBoundaries.getY2() - currentBoundaries.getY1()) / 2);
     }
 
     private boolean shouldSplit(Node node) {
