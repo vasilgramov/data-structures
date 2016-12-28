@@ -50,26 +50,20 @@ public class Node {
     }
     //--------------------------------------------------------------------------------------
 
-    public boolean addElement(Node element, Node currentParent) {
-        if (!element.getBoundaries().isInside(currentParent.getBoundaries())) {
+    public boolean addElement(Node element, Node root) {
+        if (!element.getBoundaries().isInside(root.getBoundaries())) {
             return false;
         }
 
-        currentParent.getElements().add(element);
-        if (shouldSplit(currentParent)) {
-            split(currentParent);
+        root.getElements().add(element);
+        if (shouldSplit(root)) {
+            split(root);
+            return true;
         }
 
-        if (currentParent.getChildren() != null) {
-            for (int i = 0; i < currentParent.getChildren().length; i++) {
-                if (element.getBoundaries().isInside(currentParent.getChildren()[i].getBoundaries())) {
-                    currentParent.elements.remove(element);
-                    currentParent.getChildren()[i].elements.add(element);
-
-                    addElement(element, currentParent.getChildren()[i]);
-                    break;
-                }
-            }
+        if (root.getChildren() != null) {
+            root.elements.remove(element);
+            distributeElements(root, element);
         }
 
         return true;
@@ -80,6 +74,52 @@ public class Node {
         Rectangle currentBoundaries = node.getBoundaries();
 
         initializeChildren(node, currentBoundaries);
+
+        ArrayList<Node> allElements = cloneAllElements(node.getElements());
+        for (Node element : allElements) {
+            for (Node child : node.getChildren()) {
+                if (element.getBoundaries().isInside(child.getBoundaries())) {
+                    child.elements.add(element);
+                    node.elements.remove(element);
+                    if (shouldSplit(child)) {
+                        split(child);
+                    }
+
+                    break;
+                }
+            }
+        }
+    }
+
+    private boolean distributeElements(Node node, Node element) {
+        if (node.getChildren() != null) {
+            for (Node child : node.getChildren()) {
+                if (distributeElements(child, element)) {
+                    return true;
+                }
+            }
+        }
+
+        if (element.getBoundaries().isInside(node.getBoundaries())) {
+            node.elements.add(element);
+            if (shouldSplit(node)) {
+                split(node);
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private ArrayList<Node> cloneAllElements(ArrayList<Node> allElements) {
+        ArrayList<Node> clone = new ArrayList<>(allElements.size());
+
+        for (Node element : allElements) {
+            clone.add(element);
+        }
+
+        return clone;
     }
 
     private void initializeChildren(Node node, Rectangle currentBoundaries) {
@@ -122,6 +162,11 @@ public class Node {
     }
 
     private boolean shouldSplit(Node node) {
-        return this.getElements().size() > MAX_ELEMENTS && node.getDepth() <= DEFAULT_MAX_DEPTH;
+        return node.getElements().size() > MAX_ELEMENTS && node.getDepth() <= DEFAULT_MAX_DEPTH && node.getChildren() == null;
+    }
+
+    @Override
+    public String toString() {
+        return getBoundaries().getX1() + "-" + getBoundaries().getY1() + "-" + getBoundaries().getX2() + "-" + getBoundaries().getY2();
     }
 }
