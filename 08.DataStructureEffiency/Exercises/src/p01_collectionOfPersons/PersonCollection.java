@@ -7,12 +7,14 @@ public class PersonCollection {
     private HashMap<String, TreeMap<String, Person>> byDomain;
     private HashMap<String, TreeMap<String, Person>> byNameAndTown;
     private TreeMap<Integer, ArrayList<Person>> sortedByAge;
+    private HashMap<String, TreeMap<Integer, ArrayList<Person>>> byTownAndAge;
 
     public PersonCollection() {
         this.sortedByEmail = new TreeMap<String, Person>();
         this.byDomain = new HashMap<String, TreeMap<String, Person>>();
         this.byNameAndTown = new HashMap<String, TreeMap<String, Person>>();
         this.sortedByAge = new TreeMap<Integer, ArrayList<Person>>();
+        this.byTownAndAge = new HashMap<String, TreeMap<Integer, ArrayList<Person>>>();
     }
 
     public boolean addPerson(Person person) {
@@ -20,21 +22,39 @@ public class PersonCollection {
             return false;
         }
 
-        // all structures that we are going to use
         toSortedByEmail(person);
         //---------------------------------------------------------
         toSeparatedByDomain(person);
         //---------------------------------------------------------
         toSeparatedByNameAndTown(person);
         //---------------------------------------------------------
+        toSortedByAge(person);
+        //---------------------------------------------------------
+        if (!this.byTownAndAge.containsKey(person.getTown())) {
+            this.byTownAndAge.put(person.getTown(), new TreeMap<Integer, ArrayList<Person>>());
+        }
+
+        TreeMap<Integer, ArrayList<Person>> currentTreeMap = this.byTownAndAge.get(person.getTown());
+        if (!currentTreeMap.containsKey(person.getAge())) {
+            currentTreeMap.put(person.getAge(), new ArrayList<>());
+        }
+
+        ArrayList<Person> currentList = currentTreeMap.get(person.getAge());
+        currentList.add(person);
+
+        currentTreeMap.put(person.getAge(), currentList);
+        this.byTownAndAge.put(person.getTown(), currentTreeMap);
+
+        return true;
+    }
+
+    private void toSortedByAge(Person person) {
         if (!this.sortedByAge.containsKey(person.getAge())) {
             this.sortedByAge.put(person.getAge(), new ArrayList<Person>());
         }
         ArrayList<Person> currentList = this.sortedByAge.get(person.getAge());
         currentList.add(person);
         this.sortedByAge.put(person.getAge(), currentList);
-
-        return true;
     }
 
     private void toSeparatedByNameAndTown(Person person) {
@@ -97,5 +117,11 @@ public class PersonCollection {
 
     public SortedMap<Integer, ArrayList<Person>> getAllInInterval(int start, int end) {
         return this.sortedByAge.subMap(start, end);
+    }
+
+    public SortedMap<Integer, ArrayList<Person>> getAllInIntervalInTown(String town, int start, int end) {
+        TreeMap<Integer, ArrayList<Person>> currentTreeMap = this.byTownAndAge.get(town);
+
+        return currentTreeMap.subMap(start, end);
     }
 }

@@ -1,5 +1,7 @@
 package p01_collectionOfPersons;
 
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.SortedMap;
@@ -16,7 +18,7 @@ public class Startup {
         Person person2 = new Person("Gosho", 17, "aba@gmail.com", "Varna");
         Person person6 = new Person("Angel", 33, "bfg@net.com", "Burgas");
         Person person7 = new Person("Dobrin", 25, "dga@abv.com", "Burgas");
-        Person person8 = new Person("Gosho", 17, "zzz@gmail.com", "Varna");
+        Person person8 = new Person("Gosho", 17, "zzz@gmail.com", "Plovdiv");
 
         personCollection.addPerson(person1);
         personCollection.addPerson(person2);
@@ -66,6 +68,16 @@ public class Startup {
 //            }
 //        }
 
+        System.out.println("get all persons in age interval && in specific town");
+        System.out.println("in Plovdiv and between 0 - 19");
+        SortedMap<Integer, ArrayList<Person>> getInIntervalInTown = personCollection.getAllInIntervalInTown("Plovdiv", 0, 19);
+        for (Map.Entry<Integer, ArrayList<Person>> entry : getInIntervalInTown.entrySet()) {
+            Integer key = entry.getKey();
+            ArrayList<Person> value = entry.getValue();
 
+            for (Person person : value) {
+                System.out.println(person);
+            }
+        }
     }
 }
