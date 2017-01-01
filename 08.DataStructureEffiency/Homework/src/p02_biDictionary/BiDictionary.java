@@ -55,7 +55,7 @@ public class BiDictionary<K1, K2, V> {
 
     public ArrayList<V> findByFirstKey(K1 key) {
         if (!this.valuesByFirstKey.containsKey(key)) {
-            return null;
+            return new ArrayList<V>();
         }
 
         return this.valuesByFirstKey.get(key);
@@ -63,7 +63,7 @@ public class BiDictionary<K1, K2, V> {
 
     public ArrayList<V> findBySecondKey(K2 key) {
         if (!this.valuesBySecondKey.containsKey(key)) {
-            return null;
+            return new ArrayList<V>();
         }
 
         return this.valuesBySecondKey.get(key);
@@ -72,9 +72,32 @@ public class BiDictionary<K1, K2, V> {
     public ArrayList<V> findByBothKeys(K1 key1, K2 key2) {
         String keys = key1.toString() + "$" + key2.toString();
         if (!this.valuesByBothKeys.containsKey(keys)) {
-            return null;
+            return new ArrayList<V>();
         }
 
         return this.valuesByBothKeys.get(keys);
+    }
+
+    public boolean remove(K1 key1, K2 key2) {
+        String keys = key1.toString() + "$" + key2.toString();
+        if (!this.valuesByBothKeys.containsKey(keys))
+            return false;
+
+        removeFromAllHashMaps(key1, key2, keys);
+
+        return true;
+    }
+
+    private void removeFromAllHashMaps(K1 key1, K2 key2, String keys) {
+        ArrayList<V> valuesToBeRemoved = this.valuesByBothKeys.get(keys);
+        ArrayList<V> valuesByFirstKey = this.valuesByFirstKey.get(key1);
+        ArrayList<V> valuesBySecondKey = this.valuesBySecondKey.get(key2);
+
+        valuesByFirstKey.removeAll(valuesToBeRemoved);
+        valuesBySecondKey.removeAll(valuesToBeRemoved);
+
+        this.valuesByFirstKey.put(key1, valuesByFirstKey);
+        this.valuesBySecondKey.put(key2, valuesBySecondKey);
+        this.valuesByBothKeys.remove(keys);
     }
 }

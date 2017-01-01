@@ -25,11 +25,21 @@ public class Startup {
         System.out.println(distancesPlovdivBourgas);    // [253, 292]
 
         ArrayList<Integer> disntancesRousseVarna = distances.findByBothKeys("Rousse", "Varna");
-        System.out.println(disntancesRousseVarna);  // null
+        System.out.println(disntancesRousseVarna);  // []
 
         ArrayList<Integer> distancesSofiaVarna = distances.findByBothKeys("Sofia", "Varna");
-        System.out.println(distancesSofiaVarna);
+        System.out.println(distancesSofiaVarna);    // [443, 468, 490]
 
-        System.out.println("");
+        //---------------------
+
+        System.out.println(distances.remove("Sofia", "Varna"));
+        ArrayList<Integer> distancesFromSofiaV2 = distances.findByFirstKey("Sofia");
+        System.out.println(distancesFromSofiaV2);  // [145, 383]
+
+        ArrayList<Integer> distancesToVarna = distances.findBySecondKey("Varna");
+        System.out.println(distancesToVarna);
+
+        ArrayList<Integer> distancesSofiaVarnaV2 = distances.findByBothKeys("Sofia", "Varna");
+        System.out.println(distancesSofiaVarnaV2);
     }
 }
