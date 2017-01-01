@@ -1,7 +1,5 @@
 package p01_studentsAndCourses;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
-
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Scanner;
