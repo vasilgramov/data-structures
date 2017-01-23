@@ -67,25 +67,38 @@ public class Startup {
 
             // TODO: refactor
             if (firstPath.size() > secondPath.size()) {
-                if (path01.size() == 0) {
-                    path01 = new ArrayList<>(firstPath);
-                } else if (path02.size() == 0) {
-                    path02 = new ArrayList<>(firstPath);
-                } else if (firstPath.size() > path01.size()) {
+                if (firstPath.size() > path01.size()) {
+                    path02 = new ArrayList<>(path01);
                     path01 = new ArrayList<>(firstPath);
                 } else if (firstPath.size() > path02.size()) {
                     path02 = new ArrayList<>(firstPath);
                 }
+
+//                if (path01.size() == 0) {
+//                    path01 = new ArrayList<>(firstPath);
+//                } else if (path02.size() == 0) {
+//                    path02 = new ArrayList<>(firstPath);
+//                } else if (firstPath.size() > path01.size()) {
+//                    path01 = new ArrayList<>(firstPath);
+//                } else if (firstPath.size() > path02.size()) {
+//                    path02 = new ArrayList<>(firstPath);
+//                }
             } else {
-                if (path01.size() == 0) {
-                    path01 = new ArrayList<>(secondPath);
-                } else if (path02.size() == 0) {
-                    path02 = new ArrayList<>(secondPath);
-                } else if (secondPath.size() > path01.size()) {
+                if (secondPath.size() > path01.size()) {
+                    path02 = new ArrayList<>(path01);
                     path01 = new ArrayList<>(secondPath);
                 } else if (secondPath.size() > path02.size()) {
                     path02 = new ArrayList<>(secondPath);
                 }
+//                if (path01.size() == 0) {
+//                    path01 = new ArrayList<>(secondPath);
+//                } else if (path02.size() == 0) {
+//                    path02 = new ArrayList<>(secondPath);
+//                } else if (secondPath.size() > path01.size()) {
+//                    path01 = new ArrayList<>(secondPath);
+//                } else if (secondPath.size() > path02.size()) {
+//                    path02 = new ArrayList<>(secondPath);
+//                }
             }
             // ......................................
 

@@ -23,7 +23,7 @@ public class QuadTree {
         return this.root.addElement(element, this.root);
     }
 
-    public ArrayList<Node> getQuadrant(int x1, int y1, int x2, int y2) {    // TODO: optimize
+    public ArrayList<Node> getQuadrant(int x1, int y1, int x2, int y2) {
         Rectangle currentArea = new Rectangle(x1, y1, x2, y2);
 
         ArrayList<Node> nodesInQuadrant = new ArrayList<>();

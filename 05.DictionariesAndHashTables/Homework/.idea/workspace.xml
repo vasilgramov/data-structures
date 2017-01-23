@@ -96,8 +96,8 @@
       <file leaf-file-name="OrderedTree.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/p04_orderedSet/OrderedTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="136" column="1" lean-forward="false" selection-start-line="136" selection-start-column="1" selection-end-line="160" selection-end-column="5" />
+            <state relative-caret-position="231">
+              <caret line="143" column="20" lean-forward="true" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
               <folding>
                 <element signature="e#2063#2064#0" expanded="true" />
                 <element signature="e#2122#2123#0" expanded="true" />
@@ -706,12 +706,12 @@
       <workItem from="1482142469043" duration="24529000" />
       <workItem from="1482175020034" duration="3958000" />
       <workItem from="1482226703207" duration="680000" />
-      <workItem from="1482227407160" duration="2534000" />
+      <workItem from="1482227407160" duration="3169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31701000" />
+    <option name="totallyTimeSpent" value="32336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,7 +723,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="768" extended-state="1" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1147,8 +1147,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/p04_orderedSet/OrderedTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="136" column="1" lean-forward="false" selection-start-line="136" selection-start-column="1" selection-end-line="160" selection-end-column="5" />
+        <state relative-caret-position="231">
+          <caret line="143" column="20" lean-forward="true" selection-start-line="143" selection-start-column="20" selection-end-line="143" selection-end-column="20" />
           <folding>
             <element signature="e#2063#2064#0" expanded="true" />
             <element signature="e#2122#2123#0" expanded="true" />
