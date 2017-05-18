@@ -1,32 +1,24 @@
-import sun.plugin.dom.exception.InvalidAccessException;
-
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class DoublyLinkedList<T> implements Iterable<T> {
     private ListNode<T> head;
-
     private ListNode<T> tail;
-
     private int count;
-
     private ListNode<T> currentNode;
 
     public DoublyLinkedList() {
-
     }
 
-    public int getCount() {
+    public int size() {
         return count;
     }
 
-    private void setCount(int count) {
+    private void setSize(int count) {
         this.count = count;
     }
 
     public void addFirst(T element) {
-        if (getCount() == 0) {
+        if (size() == 0) {
             this.head = this.tail = new ListNode<>(element);
         } else {
             ListNode<T> newHead = new ListNode<>(element);
@@ -36,11 +28,11 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             this.head = newHead;
         }
 
-        setCount(getCount() + 1);
+        setSize(size() + 1);
     }
 
     public void addLast(T element) {
-        if (getCount() == 0) {
+        if (size() == 0) {
             this.head = this.tail = new ListNode<>(element);
         } else {
             ListNode<T> newTail = new ListNode<>(element);
@@ -50,12 +42,12 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             this.tail = newTail;
         }
 
-        setCount(getCount() + 1);
+        setSize(size() + 1);
     }
 
     public T removeFirst() {
-        if (getCount() == 0) {
-            throw new InvalidAccessException("Node is empty!");
+        if (size() == 0) {
+            throw new IllegalArgumentException("Node is empty!");
         }
 
         T firstElement = this.head.getValue();
@@ -67,14 +59,14 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             this.tail = null;
         }
 
-        setCount(getCount() - 1);
+        setSize(size() - 1);
 
         return firstElement;
     }
 
     public T removeLast() {
-        if (getCount() == 0) {
-            throw new InvalidAccessException("Node is empty!");
+        if (size() == 0) {
+            throw new IllegalArgumentException("Node is empty!");
         }
 
         T lastElement = this.tail.getValue();
@@ -86,15 +78,14 @@ public class DoublyLinkedList<T> implements Iterable<T> {
             this.head = null;
         }
 
-        setCount(getCount() - 1);
+        setSize(size() - 1);
 
         return lastElement;
     }
 
 
-
     public T[] toArray() {  // returns array of objects
-        T[] arr = (T[])new Object[getCount()];
+        T[] arr = (T[]) new Object[size()];
         currentNode = this.head;
         for (int i = 0; i < arr.length; i++) {
             arr[i] = currentNode.getValue();
@@ -129,21 +120,10 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         };
     }
 
-    @Override
-    public void forEach(Consumer<? super T> action) {
-
-    }
-
-    @Override
-    public Spliterator<T> spliterator() {
-        return null;
-    }
-
     private class ListNode<T> {
+
         private T value;
-
         private ListNode<T> nextNode;
-
         private ListNode<T> prevNode;
 
         public ListNode(T value) {
