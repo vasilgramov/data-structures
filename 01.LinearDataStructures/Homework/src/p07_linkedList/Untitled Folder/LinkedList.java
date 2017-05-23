@@ -1,5 +1,3 @@
-package p07_linkedList;
-
 import java.util.Iterator;
 
 /**
@@ -20,13 +18,10 @@ public class LinkedList<E> implements Iterable<E> {
         return this.size == 0;
     }
 
-    public void addFirst(E item) {
+    public void addFirst(E item)
+    {
         Node old = this.head;
-
-        // this.head = new Node(item) { Next = old };
-        Node newNode = new Node(item);
-        newNode.next = old;
-        this.head = newNode;
+        this.head = new Node(item).next = old ;
 
         if (this.isEmpty()) {
             this.tail = this.head;
@@ -35,7 +30,8 @@ public class LinkedList<E> implements Iterable<E> {
         this.size++;
     }
 
-    public void addLast(E item) {
+    public void addLast(E item)
+    {
         Node old = this.tail;
 
         this.tail = new Node(item);
@@ -108,7 +104,7 @@ public class LinkedList<E> implements Iterable<E> {
 
         @Override
         public boolean hasNext() {
-            return this.cursor != null;
+            return this.cursor.next != null;
         }
 
         @Override
@@ -143,3 +139,4 @@ public class LinkedList<E> implements Iterable<E> {
 
     }
 }
+

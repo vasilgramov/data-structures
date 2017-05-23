@@ -3,8 +3,6 @@ package p07_linkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.LinkedList;
-
 public class LinkedListTests {
 
     @Test
@@ -32,7 +30,7 @@ public class LinkedListTests {
         list.addFirst(1);
 
         for (Integer item : list) {
-            Assert.assertEquals(1, list.size());
+            Assert.assertEquals(Integer.valueOf(1), item);
         }
     }
 
@@ -87,7 +85,7 @@ public class LinkedListTests {
     }
 
     @Test
-    public void RemoveLastSingleElementShouldDecreaseCount() {
+    public void removeLastSingleElementShouldDecreaseCount() {
         LinkedList<Integer> list = new LinkedList<>();
 
         list.addFirst(1);
@@ -98,7 +96,7 @@ public class LinkedListTests {
     }
 
     @Test
-    public void RemoveFirstMultipleElementsShouldRemove() {
+    public void removeFirstMultipleElementsShouldRemove() {
         LinkedList<Integer> list = new LinkedList<>();
 
         for (int i = 0; i < 100; i++) {
@@ -113,7 +111,7 @@ public class LinkedListTests {
     }
 
     @Test
-    public void RemoveLastMultipleElementsShouldRemove() {
+    public void removeLastMultipleElementsShouldRemove() {
         LinkedList<Integer> list = new LinkedList<>();
 
         for (int i = 0; i < 100; i++) {
