@@ -2,9 +2,6 @@ package p07_linkedList;
 
 import java.util.Iterator;
 
-/**
- * Created by vladix on 5/23/17.
- */
 public class LinkedList<E> implements Iterable<E> {
 
     private Node head;
@@ -23,7 +20,6 @@ public class LinkedList<E> implements Iterable<E> {
     public void addFirst(E item) {
         Node old = this.head;
 
-        // this.head = new Node(item) { Next = old };
         Node newNode = new Node(item);
         newNode.next = old;
         this.head = newNode;
