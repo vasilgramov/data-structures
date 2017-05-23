@@ -1,167 +1,143 @@
 package p07_linkedList;
 
-import sun.plugin.dom.exception.InvalidAccessException;
-
-import java.nio.file.AccessDeniedException;
 import java.util.Iterator;
 
-public class LinkedList<T> implements Iterable<T>{
-    private ListNode<T> head;
+/**
+ * Created by vladix on 5/23/17.
+ */
+public class LinkedList<E> implements Iterable<E> {
 
-    private ListNode<T> tail;
+    private Node head;
+    private Node tail;
 
-    private ListNode<T> current;
+    private int size;
 
-    private Integer count;
-
-    public LinkedList() {
-        setCount(0);
+    public int size() {
+        return this.size;
     }
 
-    //-----------------------------------------
-
-    public ListNode<T> getHead() {
-        return head;
+    private boolean isEmpty() {
+        return this.size == 0;
     }
 
-    private void setHead(ListNode<T> head) {
-        this.head = head;
+    public void addFirst(E item)
+    {
+        Node old = this.head;
+        this.head = new Node(item).next = old ;
+
+        if (this.isEmpty()) {
+            this.tail = this.head;
+        }
+
+        this.size++;
     }
 
-    public Integer getCount() {
-        return count;
-    }
+    public void addLast(E item)
+    {
+        Node old = this.tail;
 
-    private void setCount(Integer count) {
-        this.count = count;
-    }
+        this.tail = new Node(item);
 
-    //-----------------------------------------
-
-    public void add(T element) {
-        if (getCount() == 0) {
-            this.head = this.tail = new ListNode<>(element, this.count);
+        if (this.isEmpty()) {
+            this.head = this.tail;
         } else {
-            ListNode<T> newTail = new ListNode<>(element, this.count);
-            this.tail.setNextElement(newTail);
+            old.next = this.tail;
+        }
 
+        this.size++;
+    }
+
+    public E removeFirst() {
+        if (this.isEmpty()) {
+            throw new IllegalArgumentException("List is empty");
+        }
+
+        E item = this.head.value;
+
+        this.head = this.head.next;
+
+        this.size--;
+
+        if (this.isEmpty()) {
+            this.tail = null;
+        }
+
+        return item;
+    }
+
+    public E removeLast() {
+        if (this.isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+
+        E item = this.tail.value;
+
+        if (this.size == 1) {
+            this.head = this.tail = null;
+        } else {
+            Node newTail = this.getSecondToLast();
+            newTail.next = null;
             this.tail = newTail;
         }
 
-        setCount(getCount() + 1);
+        this.size--;
+
+        return item;
     }
 
-    public void removeAt(int index) {
-        if (index == getCount() || index < 0) {
-            throw new InvalidAccessException("Index must be positive and lower that LinkedList size!");
+    private Node getSecondToLast() {
+        Node node = this.head;
+
+        while (node.next != this.tail) {
+            node = node.next;
         }
 
-        ListNode<T> currentNode = this.head;
-
-        while (true) {
-            if (currentNode.getIndex() + 1 == index) {
-                currentNode.nextElement = currentNode.nextElement.getNextElement();
-
-                while (currentNode.getNextElement() != null) {
-                    currentNode.nextElement.index = currentNode.nextElement.index - 1;
-                    currentNode = currentNode.getNextElement();
-                }
-
-                return;
-            } else {
-                currentNode = currentNode.getNextElement();
-                if (index + 1 == getCount() && currentNode.getNextElement().equals(this.tail)) {
-                    currentNode.nextElement = null;
-                    this.tail = currentNode;
-                    return;
-                }
-            }
-        }
-    }
-
-    public int firstIndexOf(T element) {
-        current = this.head;
-        while (current != null) {
-            if (current.getValue().equals(element)) {
-                return current.getIndex();
-            }
-
-            current = current.getNextElement();
-        }
-
-        return -1;
-    }
-
-    public int lastIndexOf(T element) {
-        int toReturn = -1;
-        current = this.head;
-        while (current != null) {
-            if (current.getValue().equals(element)) {
-                toReturn = current.getIndex();
-            }
-
-            current = current.getNextElement();
-        }
-
-        return toReturn;
+        return node;
     }
 
     @Override
-    public Iterator<T> iterator() {
-        current = this.head;
-        return new Iterator<T>() {
-            @Override
-            public boolean hasNext() {
-                if (current != null) {
-                    return true;
-                }
-
-                return false;
-            }
-
-            @Override
-            public T next() {
-                ListNode<T> toReturn = current;
-                current = current.getNextElement();
-                return toReturn.getValue();
-            }
-        };
+    public Iterator<E> iterator() {
+        return new LinkedListIterator();
     }
 
-    private class ListNode<T> {
-        private T value;
+    private class LinkedListIterator implements Iterator<E> {
 
-        private ListNode<T> nextElement;
+        private Node cursor;
 
-        private int index;
-
-        public ListNode(T value, int index) {
-            setValue(value);
-            setIndex(index);
+        @Override
+        public boolean hasNext() {
+            return this.cursor.next != null;
         }
 
-        public T getValue() {
-            return value;
+        @Override
+        public E next() {
+            E toReturn = this.cursor.value;
+            this.cursor = this.cursor.next;
+            return toReturn;
         }
+    }
 
-        private void setValue(T value) {
+
+    private class Node
+    {
+        private E value;
+        private Node next;
+
+        public Node(E value) {
             this.value = value;
         }
 
-        public ListNode<T> getNextElement() {
-            return nextElement;
+        public E getValue() {
+            return this.value;
         }
 
-        public void setNextElement(ListNode<T> nextElement) {
-            this.nextElement = nextElement;
+        public Node getNext() {
+            return this.next;
         }
 
-        public int getIndex() {
-            return index;
+        public void setNext(Node next) {
+            this.next = next;
         }
 
-        private void setIndex(int index) {
-            this.index = index;
-        }
     }
 }

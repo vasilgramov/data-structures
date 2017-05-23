@@ -2,7 +2,7 @@ package p07_linkedList;
 
 public class Startup {
     public static void main(String[] args) {
-        LinkedList<Integer> linkedList = new LinkedList<>();
+        LinkedListv2<Integer> linkedList = new LinkedListv2<>();
 
         linkedList.add(1);
         linkedList.add(2);
