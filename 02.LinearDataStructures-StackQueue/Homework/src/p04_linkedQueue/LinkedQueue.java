@@ -1,4 +1,4 @@
-package p04_linkedQueue;
+//package p04_linkedQueue;
 
 public class LinkedQueue<T> {
     private QueueNode<T> head;
@@ -7,24 +7,24 @@ public class LinkedQueue<T> {
 
     private QueueNode<T> currentNode;
 
-    private int count;
+    private int size;
 
     //---------------------------------------------------------
     public LinkedQueue() {
         setCount(0);
     }
 
-    public int getCount() {
-        return count;
+    public int size() {
+        return size;
     }
 
     private void setCount(int count) {
-        this.count = count;
+        this.size = count;
     }
     //---------------------------------------------------------
 
     public void enqueue(T element) {
-        if (this.getCount() == 0) {
+        if (this.size() == 0) {
             this.head = this.tail = new QueueNode<>(element);
         }else {
             QueueNode<T> newTail = new QueueNode<>(element);
@@ -33,20 +33,41 @@ public class LinkedQueue<T> {
             this.tail = newTail;
         }
 
-        this.setCount(this.getCount() + 1);
+        this.setCount(this.size() + 1);
     }
 
     public T dequeue() {
+        if (this.size == 0) {
+            throw new IllegalArgumentException("Queue is empty!");
+        }
+
         T toReturn = this.head.getValue();
         QueueNode<T> newHead = this.head.getNextNode();
         this.head = newHead;
-        this.setCount(this.getCount() - 1);
+        this.setCount(this.size() - 1);
 
         return toReturn;
     }
 
     public T peek() {
         return this.head.getValue();
+    }
+
+    public T[] toArray() {
+        T[] toReturn = (T[]) new Object[this.size()];
+
+        QueueNode<T> headCopy = this.head;
+        int index = 0;
+        while (headCopy != null) {
+            toReturn[index++] = headCopy.value;
+            headCopy = headCopy.nextNode;
+        }
+
+        if (this.head == null && this.size != 0) {
+            throw new IllegalArgumentException("???");
+        }
+
+        return toReturn;
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////
