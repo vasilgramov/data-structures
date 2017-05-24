@@ -1,7 +1,5 @@
 package p04_linkedQueue;
 
-import sun.plugin.dom.exception.InvalidAccessException;
-
 public class LinkedQueue<T> {
     private QueueNode<T> head;
 

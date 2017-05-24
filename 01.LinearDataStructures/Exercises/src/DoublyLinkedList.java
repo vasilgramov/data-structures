@@ -153,5 +153,6 @@ public class DoublyLinkedList<T> implements Iterable<T> {
         public void setPrevNode(ListNode<T> prevNode) {
             this.prevNode = prevNode;
         }
+
     }
 }

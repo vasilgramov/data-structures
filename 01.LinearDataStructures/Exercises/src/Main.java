@@ -1,4 +1,5 @@
-public class Startup {
+public class Main {
+
     public static void main(String[] args) {
         DoublyLinkedList<Integer> doublyLinkedList = new DoublyLinkedList<>();
         doublyLinkedList.addFirst(1);

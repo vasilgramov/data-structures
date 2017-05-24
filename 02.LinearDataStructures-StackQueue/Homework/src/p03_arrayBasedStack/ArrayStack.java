@@ -1,13 +1,11 @@
 package p03_arrayBasedStack;
 
-import sun.plugin.dom.exception.InvalidAccessException;
-
 public class ArrayStack<T> {
     private static final int INITIAL_CAPACITY = 16;
 
     private T[] elements;
 
-    private int count;
+    private int size;
 
     private int endIndex;
 
@@ -22,19 +20,19 @@ public class ArrayStack<T> {
         this.endIndex = this.elements.length - 1;
     }
 
-    public int getCount() {
-        return count;
+    public int size() {
+        return this.size;
     }
 
     private void setCount(int count) {
-        this.count = count;
+        this.size = count;
     }
     //----------------------------------------------------------
 
     public void push(T element) {
         this.elements[this.endIndex] = element;
         this.endIndex--;
-        this.setCount(this.getCount() + 1);
+        this.setCount(this.size() + 1);
         if (this.endIndex < 0) {
             grow();
             this.endIndex = this.elements.length / 2 - 1;
@@ -53,25 +51,33 @@ public class ArrayStack<T> {
     }
 
     public T pop() {
-        if (this.getCount() == 0) {
-            throw new InvalidAccessException("Stack is empty!");
+        if (this.size() == 0) {
+            throw new IllegalArgumentException("Stack is empty!");
         }
 
         T toReturn = this.elements[this.endIndex + 1];
         this.elements[this.endIndex + 1] = null;
-        this.setCount(this.getCount() - 1);
+        this.setCount(this.size() - 1);
         this.endIndex++;
 
         return toReturn;
     }
 
     public T peek() {
-        if (this.getCount() == 0) {
-            throw new InvalidAccessException("Stack is empty!");
+        if (this.size() == 0) {
+            throw new IllegalArgumentException("Stack is empty!");
         }
 
         return this.elements[this.endIndex + 1];
     }
 
+    public T[] toArray() {
+        T[] toReturn = (T[]) new Object[this.size()];
+        for (int i = 0; i < this.size(); i++) {
+            toReturn[toReturn.length - i - 1] = this.elements[this.elements.length - i - 1];
+        }
+
+        return toReturn;
+    }
 
 }

@@ -12,10 +12,10 @@ public class Startup {
         arrayStack.push(6);
         arrayStack.push(5);
 
-        System.out.println(arrayStack.getCount());
+        System.out.println(arrayStack.size());
         System.out.println(arrayStack.pop());
         System.out.println("//----------------------------------");
-        System.out.println(arrayStack.getCount());
+        System.out.println(arrayStack.size());
         System.out.println(arrayStack.pop());
 
         System.out.println("//----------------------------------");
