@@ -1,4 +1,4 @@
-//package p04_linkedQueue;
+package p04_linkedQueue;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,7 @@
-package p04_linkedQueue;
+package p05_linkedQueue;
 
 public class LinkedQueue<T> {
+
     private QueueNode<T> head;
 
     private QueueNode<T> tail;
@@ -108,4 +109,5 @@ public class LinkedQueue<T> {
         }
         //------------------------------------------------------
     }
+
 }
