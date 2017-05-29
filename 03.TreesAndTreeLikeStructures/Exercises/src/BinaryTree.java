@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.function.Consumer;
 
 public class BinaryTree<T> {
     private T value;
@@ -9,6 +9,10 @@ public class BinaryTree<T> {
 
     //------------------------------------------------------------------
     public BinaryTree(T value) {
+        this.setValue(value);
+    }
+
+    public BinaryTree(T value, BinaryTree<T> child) {
         this.setValue(value);
     }
 
@@ -89,4 +93,42 @@ public class BinaryTree<T> {
         return builder.toString();
     }
 
+    public String printIndentedPreOrder(int indent, StringBuilder builder) {
+        builder.append(newString(" ", indent)).append(this.getValue()).append("\n");
+
+        if (this.leftChild != null) {
+            this.leftChild.printIndentedPreOrder(indent + 1, builder);
+        }
+
+        if (this.rightChild != null) {
+            this.rightChild.printIndentedPreOrder(indent + 1, builder);
+        }
+
+
+        return builder.toString();
+    }
+
+    public void eachPostOrder(Consumer<T> consumer) {
+        if (this.leftChild != null) {
+            this.leftChild.eachPostOrder(consumer);
+        }
+
+        if (this.rightChild != null) {
+            this.rightChild.eachPostOrder(consumer);
+        }
+
+        consumer.accept(this.value);
+    }
+
+    public void eachInOrder(Consumer<T> consumer) {
+        if (this.leftChild != null) {
+            this.leftChild.eachInOrder(consumer);
+        }
+
+        consumer.accept(this.value);
+
+        if (this.rightChild != null) {
+            this.rightChild.eachInOrder(consumer);
+        }
+    }
 }
