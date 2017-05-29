@@ -90,13 +90,12 @@ public class TreeTests {
 
         // Act
         List<Integer> resultElements = new ArrayList<>();
-        Iterable<Integer> elements = tree.orderDFS();
+        Iterable<Integer> elements = tree.iterativeDFS1();
         elements.forEach(resultElements::add);
         int[] actualResult = new int[resultElements.size()];
         for (int i = 0; i < resultElements.size(); i++) {
             actualResult[i] = resultElements.get(i);
         }
-
 
         System.out.println(Arrays.toString(actualResult));
         // Assert

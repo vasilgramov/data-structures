@@ -92,6 +92,26 @@ public class Tree<T> {
         return elements;
     }
 
+    public Iterable<T> iterativeDFS1() {
+        Deque<T> elements = new ArrayDeque<>();
+        Deque<Tree<T>> stack = new ArrayDeque<>();
+
+        stack.addFirst(this);
+        while (!stack.isEmpty()) {
+            Tree<T> tTree = stack.removeFirst();
+
+            if (tTree.children != null) {
+                for (Tree<T> child : tTree.children) {
+                    stack.addFirst(child);
+                }
+            }
+
+            elements.addFirst(tTree.value);
+        }
+
+        return elements;
+    }
+
     public Iterable<T> orderDFS() {
         List<T> elements = new ArrayList<>();
         this.DFS(this, elements);
