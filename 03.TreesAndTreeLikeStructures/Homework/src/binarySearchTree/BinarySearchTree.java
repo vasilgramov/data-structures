@@ -106,6 +106,45 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
     }
 
+    public void delete(T key) {
+        this.root = deleteRecursive(this.root, key);
+    }
+
+    private Node deleteRecursive(Node root, T key) {
+        if (root == null) {
+            return root;
+        }
+
+        if (key.compareTo(root.value) < 0) {
+            root.left = deleteRecursive(root.left, key);
+        }
+        else if (key.compareTo(root.value) > 0) {
+            root.right = deleteRecursive(root.right, key);
+        } else {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            root.value = minValue(root.right);
+
+            root.right = deleteRecursive(root.right, root.value);
+        }
+
+        return root;
+    }
+
+    private T minValue(Node root) {
+        T minv = root.value;
+        while (root.left != null) {
+            minv = root.left.value;
+            root = root.left;
+        }
+
+        return minv;
+    }
+
     public void deleteMin() {
         if (this.root == null) {
             throw new IllegalArgumentException("Tree is empty!");
@@ -124,11 +163,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
         } else {
             parent.left = min.right;
         }
-    }
-
-    public boolean delete(T element) {
-        // TODO:
-        return false;
     }
 
     public T floor(T element) {

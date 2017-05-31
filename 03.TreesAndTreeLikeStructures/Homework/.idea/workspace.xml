@@ -27,12 +27,9 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/binarySearchTree/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-              <folding>
-                <element signature="e#91#92#0" expanded="true" />
-                <element signature="e#158#159#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="104">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -40,8 +37,8 @@
       <file leaf-file-name="BinarySearchTree.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/binarySearchTree/BinarySearchTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="151" column="52" lean-forward="true" selection-start-line="151" selection-start-column="52" selection-end-line="151" selection-end-column="52" />
+            <state relative-caret-position="275">
+              <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
               <folding>
                 <element signature="method#BinarySearchTree#0;class#BinarySearchTree#0" expanded="false" />
                 <element signature="method#preOrderCopy#0;class#BinarySearchTree#0" expanded="false" />
@@ -49,11 +46,11 @@
                 <element signature="method#contains#0;class#BinarySearchTree#0" expanded="false" />
                 <element signature="method#search#0;class#BinarySearchTree#0" expanded="false" />
                 <element signature="method#deleteMax#0;class#BinarySearchTree#0" expanded="false" />
+                <element signature="e#2642#2643#0" expanded="true" />
+                <element signature="e#2701#2702#0" expanded="true" />
                 <element signature="method#deleteMin#0;class#BinarySearchTree#0" expanded="false" />
-                <element signature="e#3168#3169#0" expanded="true" />
-                <element signature="e#3216#3217#0" expanded="true" />
-                <element signature="e#3637#3638#0" expanded="true" />
-                <element signature="e#3684#3685#0" expanded="true" />
+                <element signature="method#floor#1;class#BinarySearchTree#0" expanded="false" />
+                <element signature="method#ceil#1;class#BinarySearchTree#0" expanded="false" />
                 <element signature="method#eachInOrder#1;class#BinarySearchTree#0" expanded="false" />
                 <element signature="method#range#0;class#BinarySearchTree#0" expanded="false" />
                 <element signature="method#range#1;class#BinarySearchTree#0" expanded="false" />
@@ -66,8 +63,8 @@
       <file leaf-file-name="BinarySearchTreeTests.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/binarySearchTree/BinarySearchTreeTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="456" column="4" lean-forward="false" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+            <state relative-caret-position="535">
+              <caret line="578" column="0" lean-forward="true" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,6 +108,7 @@
         <option value="$PROJECT_DIR$/src/p02_directories/Startup.java" />
         <option value="$PROJECT_DIR$/src/binaryTree/BinarySearchTreeTests.java" />
         <option value="$PROJECT_DIR$/src/binarySearchTree/Main.java" />
+        <option value="$PROJECT_DIR$/src/BinarySearchTree.java" />
         <option value="$PROJECT_DIR$/src/binarySearchTree/BinarySearchTree.java" />
         <option value="$PROJECT_DIR$/src/binarySearchTree/BinarySearchTreeTests.java" />
       </list>
@@ -217,7 +215,85 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.BinarySearchTreeTests">
+  <component name="RunManager" selected="JUnit.BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame">
+    <configuration default="false" name="BinarySearchTreeTests.testDelete_deleteLeaf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="binarySearchTree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Homework" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="binarySearchTree" />
+      <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
+      <option name="METHOD_NAME" value="testDelete_deleteLeaf" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BinarySearchTreeTests.testDelete_OnlyLeftChild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="binarySearchTree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Homework" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="binarySearchTree" />
+      <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
+      <option name="METHOD_NAME" value="testDelete_OnlyLeftChild" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="BinarySearchTreeTests.testDelete_OnlyRightChild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="binarySearchTree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Homework" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="binarySearchTree" />
+      <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
+      <option name="METHOD_NAME" value="testDelete_OnlyRightChild" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="false" name="BinarySearchTreeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -244,7 +320,7 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="binarySearchTree.*" />
@@ -256,85 +332,7 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="binarySearchTree" />
       <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
-      <option name="METHOD_NAME" value="testFloor1_shouldWorkCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BinarySearchTreeTests.testFloor2_shouldWorkCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="binarySearchTree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Homework" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="binarySearchTree" />
-      <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
-      <option name="METHOD_NAME" value="testFloor2_shouldWorkCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BinarySearchTreeTests.testFloor4_shouldWorkCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="binarySearchTree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Homework" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="binarySearchTree" />
-      <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
-      <option name="METHOD_NAME" value="testFloor4_shouldWorkCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-      <method />
-    </configuration>
-    <configuration default="false" name="BinarySearchTreeTests.testFloor3_shouldWorkCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="binarySearchTree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Homework" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="binarySearchTree" />
-      <option name="MAIN_CLASS_NAME" value="binarySearchTree.BinarySearchTreeTests" />
-      <option name="METHOD_NAME" value="testFloor3_shouldWorkCorrectly" />
+      <option name="METHOD_NAME" value="testDelete_NodeNotInTree_structureShouldBeSame" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -736,19 +734,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor2_shouldWorkCorrectly" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor4_shouldWorkCorrectly" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor3_shouldWorkCorrectly" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_deleteLeaf" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_OnlyLeftChild" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_OnlyRightChild" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor3_shouldWorkCorrectly" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor4_shouldWorkCorrectly" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor2_shouldWorkCorrectly" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_OnlyRightChild" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_OnlyLeftChild" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.BinarySearchTreeTests.testDelete_deleteLeaf" />
       </list>
     </recent_temporary>
   </component>
@@ -772,44 +770,44 @@
       <workItem from="1481656748084" duration="2034000" />
       <workItem from="1482148933564" duration="15000" />
       <workItem from="1496221917671" duration="2098000" />
-      <workItem from="1496227178542" duration="7646000" />
+      <workItem from="1496227178542" duration="14754000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BinarySearchTreeTests - 2017.05.31 at 15h 53m 25s.xml">
+    <history-entry file="BinarySearchTreeTests - 2017.05.31 at 18h 27m 19s.xml">
       <configuration name="BinarySearchTreeTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests - 2017.05.31 at 15h 53m 44s.xml">
-      <configuration name="BinarySearchTreeTests" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_NodeNotInTree_structureShouldBeSame - 2017.05.31 at 18h 29m 51s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor1_shouldWorkCorrectly - 2017.05.31 at 15h 51m 10s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_NodeNotInTree_structureShouldBeSame - 2017.05.31 at 18h 30m 23s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor1_shouldWorkCorrectly - 2017.05.31 at 15h 51m 18s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_NodeNotInTree_structureShouldBeSame - 2017.05.31 at 18h 36m 59s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor1_shouldWorkCorrectly - 2017.05.31 at 15h 51m 33s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_NodeNotInTree_structureShouldBeSame - 2017.05.31 at 18h 37m 10s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_NodeNotInTree_structureShouldBeSame" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor1_shouldWorkCorrectly - 2017.05.31 at 15h 52m 17s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor1_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_OnlyLeftChild - 2017.05.31 at 18h 24m 40s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_OnlyLeftChild" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor2_shouldWorkCorrectly - 2017.05.31 at 15h 52m 40s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor2_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_OnlyLeftChild - 2017.05.31 at 18h 25m 35s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_OnlyLeftChild" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor2_shouldWorkCorrectly - 2017.05.31 at 15h 52m 59s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor2_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_OnlyRightChild - 2017.05.31 at 18h 26m 47s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_OnlyRightChild" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor3_shouldWorkCorrectly - 2017.05.31 at 15h 53m 41s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor3_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_OnlyRightChild - 2017.05.31 at 18h 27m 04s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_OnlyRightChild" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BinarySearchTreeTests_testFloor4_shouldWorkCorrectly - 2017.05.31 at 15h 53m 21s.xml">
-      <configuration name="BinarySearchTreeTests.testFloor4_shouldWorkCorrectly" configurationId="JUnit" />
+    <history-entry file="BinarySearchTreeTests_testDelete_deleteLeaf - 2017.05.31 at 18h 23m 25s.xml">
+      <configuration name="BinarySearchTreeTests.testDelete_deleteLeaf" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54500000" />
+    <option name="totallyTimeSpent" value="61608000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="1" />
@@ -837,7 +835,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34565917" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37299034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -867,14 +865,8 @@
           <properties class="p02_directories.Startup" method="printFolders" />
           <option name="timeStamp" value="111" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/binarySearchTree/BinarySearchTree.java</url>
-          <line>159</line>
-          <properties />
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="128" />
+      <option name="time" value="142" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -883,25 +875,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/p01_playWithTree/Startup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1131">
-          <caret line="215" column="5" lean-forward="false" selection-start-line="215" selection-start-column="5" selection-end-line="215" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#getDepth#0;class#Startup#0" expanded="false" />
-            <element signature="method#getRoot#0;class#Startup#0" expanded="false" />
-            <element signature="method#buildTree#0;class#Startup#0" expanded="false" />
-            <element signature="method#searchInDepth#0;class#Startup#0" expanded="false" />
-            <element signature="method#getLeaf#0;class#Startup#0" expanded="false" />
-            <element signature="method#getMiddleNodes#0;class#Startup#0" expanded="false" />
-            <element signature="method#getLongestPath#0;class#Startup#0" expanded="false" />
-            <element signature="method#getPathsWithSumP#0;class#Startup#0" expanded="false" />
-            <element signature="method#getSumOfArray#0;class#Startup#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/p02_directories/Startup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
@@ -1517,6 +1490,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BinarySearchTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/p03_calculateAlgorithExpression.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -1527,27 +1516,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/binarySearchTree/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="5" column="57" lean-forward="false" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
-          <folding>
-            <element signature="e#91#92#0" expanded="true" />
-            <element signature="e#158#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/junit-4.12.jar!/org/junit/runners/model/FrameworkMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="104">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/binarySearchTree/BinarySearchTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="151" column="52" lean-forward="true" selection-start-line="151" selection-start-column="52" selection-end-line="151" selection-end-column="52" />
+        <state relative-caret-position="275">
+          <caret line="124" column="34" lean-forward="true" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
           <folding>
             <element signature="method#BinarySearchTree#0;class#BinarySearchTree#0" expanded="false" />
             <element signature="method#preOrderCopy#0;class#BinarySearchTree#0" expanded="false" />
@@ -1555,11 +1533,11 @@
             <element signature="method#contains#0;class#BinarySearchTree#0" expanded="false" />
             <element signature="method#search#0;class#BinarySearchTree#0" expanded="false" />
             <element signature="method#deleteMax#0;class#BinarySearchTree#0" expanded="false" />
+            <element signature="e#2642#2643#0" expanded="true" />
+            <element signature="e#2701#2702#0" expanded="true" />
             <element signature="method#deleteMin#0;class#BinarySearchTree#0" expanded="false" />
-            <element signature="e#3168#3169#0" expanded="true" />
-            <element signature="e#3216#3217#0" expanded="true" />
-            <element signature="e#3637#3638#0" expanded="true" />
-            <element signature="e#3684#3685#0" expanded="true" />
+            <element signature="method#floor#1;class#BinarySearchTree#0" expanded="false" />
+            <element signature="method#ceil#1;class#BinarySearchTree#0" expanded="false" />
             <element signature="method#eachInOrder#1;class#BinarySearchTree#0" expanded="false" />
             <element signature="method#range#0;class#BinarySearchTree#0" expanded="false" />
             <element signature="method#range#1;class#BinarySearchTree#0" expanded="false" />
@@ -1570,8 +1548,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/binarySearchTree/BinarySearchTreeTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="456" column="4" lean-forward="false" selection-start-line="456" selection-start-column="4" selection-end-line="456" selection-end-column="4" />
+        <state relative-caret-position="535">
+          <caret line="578" column="0" lean-forward="true" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

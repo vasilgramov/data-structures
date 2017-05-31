@@ -454,5 +454,125 @@ public class BinarySearchTreeTests {
         Assert.assertEquals(Integer.valueOf(12), floor);
     }
 
-    
+    @Test
+    public void testDelete_deleteRoot_setInorderSuccessor() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(1);
+        bst.insert(8);
+        bst.insert(18);
+        bst.insert(17);
+        bst.insert(16);
+        bst.insert(23);
+
+        bst.delete(12);
+
+        BinarySearchTree<Integer>.Node root = bst.getRoot();
+        Assert.assertEquals(Integer.valueOf(16), root.getValue());
+        // TODO: test structure
+    }
+
+    @Test
+    public void testDelete_deleteLeaf() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(1);
+        bst.insert(8);
+        bst.insert(18);
+        bst.insert(23);
+
+        bst.delete(1);
+
+        BinarySearchTree<Integer>.Node left = bst.getRoot().getLeft().getLeft();
+        Assert.assertEquals(null, left);
+    }
+
+    @Test
+    public void testDelete_OnlyLeftChild() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        bst.delete(5);
+
+        BinarySearchTree<Integer>.Node left = bst.getRoot().getLeft();
+        BinarySearchTree<Integer>.Node right = left.getRight();
+
+        Assert.assertEquals(Integer.valueOf(1), left.getValue());
+        Assert.assertEquals(null, right);
+    }
+
+    @Test
+    public void testDelete_OnlyRightChild() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(23);
+
+        bst.delete(21);
+
+        BinarySearchTree<Integer>.Node root = bst.getRoot();
+        Assert.assertEquals(Integer.valueOf(12), root.getValue());
+
+        BinarySearchTree<Integer>.Node right = root.getRight();
+        Assert.assertEquals(Integer.valueOf(23), right.getValue());
+
+        BinarySearchTree<Integer>.Node left = right.getLeft();
+        Assert.assertEquals(null, left);
+    }
+
+    @Test
+    public void testDelete_NodeNotInTree_structureShouldBeSame() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        List<Integer> elements = new ArrayList<>();
+        Iterable<Integer> range = bst.range(1, 23);
+        for (Integer element : range) {
+            elements.add(element);
+        }
+
+        int index = 0;
+        int[] expectedResult = new int[elements.size()];
+        for (Integer element : elements) {
+            expectedResult[index++] = element;
+        }
+
+        bst.delete(-1);
+        range = bst.range(1, 23);
+        List<Integer> elementsAfterDelete = new ArrayList<>();
+        for (Integer integer : range) {
+            elementsAfterDelete.add(integer);
+        }
+
+        index = 0;
+        int[] result = new int[elementsAfterDelete.size()];
+        for (Integer integer : elementsAfterDelete) {
+            result[index++] = integer;
+        }
+
+        Assert.assertArrayEquals(expectedResult, result);
+    }
 }
