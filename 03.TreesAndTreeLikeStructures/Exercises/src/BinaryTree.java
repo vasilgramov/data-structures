@@ -94,7 +94,7 @@ public class BinaryTree<T> {
     }
 
     public String printIndentedPreOrder(int indent, StringBuilder builder) {
-        builder.append(newString(" ", indent)).append(this.getValue()).append("\n");
+        builder.append(newString("  ", indent)).append(this.getValue()).append("\n");
 
         if (this.leftChild != null) {
             this.leftChild.printIndentedPreOrder(indent + 1, builder);

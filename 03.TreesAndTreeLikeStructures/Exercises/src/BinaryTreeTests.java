@@ -74,15 +74,7 @@ public class BinaryTreeTests {
         String output = binaryTree.printIndentedPreOrder(0, new StringBuilder());
 
         // Assert
-        String expectedOutput = "*\n" +
-                " -\n" +
-                "  +\n" +
-                "   3\n" +
-                "   2\n" +
-                "  *\n" +
-                "   9\n" +
-                "   6\n" +
-                " 8\n";
+        String expectedOutput = "*\n  -\n    +\n      3\n      2\n    *\n      9\n      6\n  8\n";
         Assert.assertEquals(expectedOutput, output);
     }
 }
