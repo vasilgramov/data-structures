@@ -1,4 +1,4 @@
-package binarySearchTree;
+package KDTrees;
 
 public class Main {
 

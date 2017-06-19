@@ -1,7 +1,5 @@
 package p01_binaryHeap;
 
-import sun.plugin.dom.exception.InvalidAccessException;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -27,7 +25,7 @@ public class BinaryHeap<T extends Comparable<T>> {
         }
     }
 
-    public int count() {
+    public int size() {
         return this.heap.size();
     }
 
@@ -39,7 +37,7 @@ public class BinaryHeap<T extends Comparable<T>> {
 
     public T extractMax() {
         if (this.heap.size() == 0) {
-            throw new InvalidAccessException("Heap is empty!");
+            throw new IllegalArgumentException("HeapTests is empty!");
         }
 
         T toReturn = this.heap.get(0);
@@ -56,7 +54,7 @@ public class BinaryHeap<T extends Comparable<T>> {
 
     public T peek() {
         if (this.heap.size() == 0) {
-            throw new InvalidAccessException("Heap is empty!");
+            throw new IllegalArgumentException("HeapTests is empty!");
         }
 
         return this.heap.get(0);

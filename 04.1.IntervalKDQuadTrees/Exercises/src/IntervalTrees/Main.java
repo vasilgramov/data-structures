@@ -1,4 +1,4 @@
-package binarySearchTree;
+package IntervalTrees;
 
 public class Main {
 

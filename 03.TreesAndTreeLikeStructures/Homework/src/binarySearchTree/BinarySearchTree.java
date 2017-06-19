@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 
 public class BinarySearchTree<T extends Comparable<T>> {
     private Node root;
+    private int nodesCount;
 
     public BinarySearchTree() {
     }
@@ -29,6 +30,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     public void insert(T value) {
+        this.nodesCount++;
+
         if (this.root == null) {
             this.root = new Node(value);
             return;
@@ -38,6 +41,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         Node current = this.root;
         while (current != null) {
             parent = current;
+            parent.childrenCount++;
 
             if (value.compareTo(current.value) < 0) {
                 current = current.left;
@@ -86,6 +90,51 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return new BinarySearchTree<>(current);
     }
 
+    public int rank(T item) {
+        if (this.root == null) {
+            throw new IllegalArgumentException("Tree is empty");
+        }
+
+        int rank = rank(item, this.root);
+        return rank;
+    }
+
+    private int rank(T item, Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        if (node.value.compareTo(item) > 0) {
+            return rank(item, node.left);
+        } else if (node.value.compareTo(item) < 0) {
+            return 1 + size(node.left) + rank(item, node.right);
+        } else {
+            if (node.right == null) {
+                return node.childrenCount - 1;
+            } else {
+                return node.childrenCount - node.right.childrenCount - 1;
+            }
+        }
+    }
+
+    private T minValue(Node root) {
+        T minv = root.value;
+        while (root.left != null) {
+            minv = root.left.value;
+            root = root.left;
+        }
+
+        return minv;
+    }
+
+    private int size(Node node) {
+        if (node == null) {
+            return 0;
+        }
+
+        return node.childrenCount;
+    }
+
     public void deleteMax() {
         if (this.root == null) {
             throw new IllegalArgumentException("Tree is empty!");
@@ -96,6 +145,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         while (max.right != null) {
             parent = max;
+            parent.childrenCount--;
             max = max.right;
         }
 
@@ -104,10 +154,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
         } else {
             parent.right = max.left;
         }
+
+        this.nodesCount--;
     }
 
     public void delete(T key) {
         this.root = deleteRecursive(this.root, key);
+
+        if (this.root != null) {
+            this.root.childrenCount--;
+            this.nodesCount--;
+        }
     }
 
     private Node deleteRecursive(Node root, T key) {
@@ -116,9 +173,11 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
 
         if (key.compareTo(root.value) < 0) {
+            root.childrenCount--;
             root.left = deleteRecursive(root.left, key);
         }
         else if (key.compareTo(root.value) > 0) {
+            root.childrenCount--;
             root.right = deleteRecursive(root.right, key);
         } else {
             if (root.left == null) {
@@ -135,16 +194,6 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return root;
     }
 
-    private T minValue(Node root) {
-        T minv = root.value;
-        while (root.left != null) {
-            minv = root.left.value;
-            root = root.left;
-        }
-
-        return minv;
-    }
-
     public void deleteMin() {
         if (this.root == null) {
             throw new IllegalArgumentException("Tree is empty!");
@@ -155,6 +204,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 
         while (min.left != null) {
             parent = min;
+            parent.childrenCount--;
             min = min.left;
         }
 
@@ -163,6 +213,8 @@ public class BinarySearchTree<T extends Comparable<T>> {
         } else {
             parent.left = min.right;
         }
+
+        this.nodesCount--;
     }
 
     public T floor(T element) {
@@ -245,13 +297,20 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
     }
 
+    public int select(T element) {
+        throw new UnsupportedOperationException();
+    }
+
     class Node {
         private T value;
         private Node left;
         private Node right;
 
+        private int childrenCount;
+
         public Node(T value) {
             this.value = value;
+            this.childrenCount = 1;
         }
 
         public T getValue() {

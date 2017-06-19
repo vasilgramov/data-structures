@@ -247,7 +247,7 @@ public class BinarySearchTreeTests {
         }
     }
 
-    //##### EXERCISES #####
+    // ##### EXERCISES #####
 
     @Test(expected = IllegalArgumentException.class)
     public void deleteMin_shouldThrowException() {
@@ -351,6 +351,35 @@ public class BinarySearchTreeTests {
 
         Integer ceil = bst.ceil(8);
         Assert.assertEquals(Integer.valueOf(8), ceil);
+    }
+
+    @Test
+    public void testCeil5_shouldWorkCorrectly() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(1);
+        bst.insert(8);
+        bst.insert(18);
+
+        Integer ceil = bst.ceil(6);
+        Assert.assertEquals(Integer.valueOf(8), ceil);
+    }
+
+    @Test
+    public void testDel1() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+
+        bst.delete(12);
+
+        BinarySearchTree<Integer>.Node root = bst.getRoot();
+        System.out.println(root.getValue());
     }
 
     @Test
@@ -472,7 +501,6 @@ public class BinarySearchTreeTests {
 
         BinarySearchTree<Integer>.Node root = bst.getRoot();
         Assert.assertEquals(Integer.valueOf(16), root.getValue());
-        // TODO: test structure
     }
 
     @Test
@@ -491,6 +519,23 @@ public class BinarySearchTreeTests {
 
         BinarySearchTree<Integer>.Node left = bst.getRoot().getLeft().getLeft();
         Assert.assertEquals(null, left);
+    }
+
+    @Test
+    public void testDeleteMax_TestThrowingNullPointer() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(1);
+        bst.insert(8);
+        bst.insert(18);
+        bst.insert(23);
+
+        bst.deleteMax();
+
+        bst.eachInOrder(System.out::println);
     }
 
     @Test
@@ -574,5 +619,131 @@ public class BinarySearchTreeTests {
         }
 
         Assert.assertArrayEquals(expectedResult, result);
+    }
+
+    @Test
+    public void testRank_rootRank() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(0);
+        bst.insert(-1);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        int rank = bst.rank(12);
+        Assert.assertEquals(5, rank);
+    }
+
+    @Test
+    public void testRank_nodeWithNoRightChild() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(0);
+        bst.insert(-1);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        int rank = bst.rank(5);
+        Assert.assertEquals(3, rank);
+    }
+
+    @Test
+    public void testRank_highestRankNode() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        int rank = bst.rank(23);
+        Assert.assertEquals(6, rank);
+    }
+
+    @Test
+    public void testRank_withValue_higherThanHighestNode_returnAllNodesInTree() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        int rank = bst.rank(50);
+        Assert.assertEquals(7, rank);
+    }
+
+    @Test
+    public void testRank_withValue_lowerThanLowest_returnZero() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(8);
+        bst.insert(1);
+        bst.insert(18);
+        bst.insert(23);
+
+        int rank = bst.rank(-1);
+        Assert.assertEquals(0, rank);
+    }
+
+    @Test
+    public void testDeleteRoot_LowerRankOfParentNodes() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+
+        bst.insert(12);
+        bst.insert(21);
+        bst.insert(5);
+        bst.insert(1);
+        bst.insert(8);
+        bst.insert(18);
+        bst.insert(17);
+        bst.insert(16);
+        bst.insert(23);
+
+        bst.delete(12);
+
+        BinarySearchTree<Integer>.Node root = bst.getRoot();
+        Assert.assertEquals(Integer.valueOf(16), root.getValue());
+
+        Assert.assertEquals(3, bst.rank(16));
+        Assert.assertEquals(6, bst.rank(21));
+    }
+
+    @Test
+    public void testSelect() {
+        BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+        bst.insert(18);
+        bst.insert(15);
+        bst.insert(30);
+        bst.insert(3);
+        bst.insert(16);
+        bst.insert(25);
+        bst.insert(40);
+
+        Assert.assertEquals(bst.select(3), (18));
+        Assert.assertEquals(bst.select(2), (16));
+        Assert.assertEquals(bst.select(1), (15));
+        Assert.assertEquals(bst.select(0), (3));
+        Assert.assertEquals(bst.select(5), (30));
+        Assert.assertEquals(bst.select(4), (25));
+        Assert.assertEquals(bst.select(6), (40));
     }
 }
