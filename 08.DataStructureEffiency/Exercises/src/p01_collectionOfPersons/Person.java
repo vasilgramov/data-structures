@@ -1,55 +1,60 @@
 package p01_collectionOfPersons;
 
-public class Person {
+public class Person implements Comparable<Person> {
+
     private String name;
-    private int age;
+
     private String email;
+
+    private int age;
+
     private String town;
 
-    //----------------------------------------------------------------
-    public Person(String name, int age, String email, String town) {
+    public Person() {
+        super();
+    }
+
+    public Person(String email, String name, int age, String town) {
         this.setName(name);
-        this.setAge(age);
         this.setEmail(email);
+        this.setAge(age);
         this.setTown(town);
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    private void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    private void setAge(int age) {
-        this.age = age;
-    }
-
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
-    private void setEmail(String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getTown() {
-        return town;
+    public int getAge() {
+        return this.age;
     }
 
-    private void setTown(String town) {
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getTown() {
+        return this.town;
+    }
+
+    public void setTown(String town) {
         this.town = town;
     }
-    //----------------------------------------------------------------
-
 
     @Override
-    public String toString() {
-        return this.getName() + " - " + this.getAge() + " - " + this.getEmail() + " - " + this.getTown();
+    public int compareTo(Person o) {
+        return this.getEmail().compareTo(o.getEmail());
     }
 }
