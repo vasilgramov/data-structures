@@ -1,5 +1,3 @@
-package p02;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -395,7 +393,7 @@ public class EnterpriceTestCorrectness {
         }
     }
 
-//    p02.Employee getByUUID(UUID id);
+//    Employee getByUUID(UUID id);
     @Test
     public void testGettingEmployeeById() {
         IEnterprise enterprise = new Enterprise();
@@ -849,7 +847,7 @@ public class EnterpriceTestCorrectness {
     }
 
 
-    //Iterable<p02.Employee> searchByNameAndPosition(String firstName, String lastName, p02.Position position);
+    //Iterable<Employee> searchByNameAndPosition(String firstName, String lastName, Position position);
 
     @Test
     public void searchByNameAndPositionEmptyCollection() {
@@ -940,7 +938,7 @@ public class EnterpriceTestCorrectness {
         Assert.assertEquals(employee.getId(), next.getId());
     }
 
-    //    Iterable<p02.Employee> allWithPositionAndMinSalary(p02.Position position, double minSalary);
+    //    Iterable<Employee> allWithPositionAndMinSalary(Position position, double minSalary);
 
     @Test
     public void searchAllWithPositionAndMinSalaryReturnNothing() {

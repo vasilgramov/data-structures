@@ -1,5 +1,3 @@
-package p02;
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -137,9 +135,10 @@ public class EnterpriseTestsPerformance {
     public void raiseSalary() {
         IEnterprise enterprise = new Enterprise();
 
+        Calendar calendar = new GregorianCalendar(2017, 1, 1);
         List<Employee> employees = new ArrayList<>();
         for (int i = 0; i < 10000; i++) {
-            Employee employee = new Employee("a" + i, "a" + i, 1, Position.HR, new Date());
+            Employee employee = new Employee("a" + i, "a" + i, 1, Position.HR, calendar.getTime());
 
             employees.add(employee);
             enterprise.add(employee);
@@ -149,7 +148,7 @@ public class EnterpriseTestsPerformance {
 
         long l = System.currentTimeMillis();
 
-        enterprise.raiseSalary(new Date().getMonth(), 1);
+        enterprise.raiseSalary(1, 1);
 
         long l1 = System.currentTimeMillis();
 

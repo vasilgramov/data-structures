@@ -1,5 +1,3 @@
-package p02;
-
 import java.util.*;
 
 public class Enterprise implements IEnterprise {
